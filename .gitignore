@@ -59,3 +59,7 @@ typings/
 
 # Sass cache
 .sass-cache/
+
+# Gulp temp css
+/css
+/builds/css

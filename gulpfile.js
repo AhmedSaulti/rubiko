@@ -23,9 +23,9 @@ var env,
 
 env = process.env.NODE_ENV || 'development';
 
-if (env==='development') {
+if (env == 'development') {
   outputDir = 'builds/development/';
-  sassStyle = 'expanded';
+  // sassStyle = 'expanded';
 } else {
   outputDir = 'builds/production/';
   sassStyle = 'compressed';
@@ -47,22 +47,22 @@ gulp.task('js', function() {
     .pipe(connect.reload())
 });
 
-gulp.task('compass', function() {
+gulp.task('compass', function () {
   gulp.src(sassSources)
     .pipe(compass({
       sass: 'components/sass',
-      image: outputDir + 'images',
-      style: sassStyle
+      // image: outputDir + 'images',
+      // style: sassStyle
     })
-    .on('error', gutil.log))
-    .pipe(gulp.dest(outputDir + 'css'))
+      .on('error', gutil.log))
+    .pipe(gulp.dest('' + outputDir + 'css/css'))
     .pipe(connect.reload())
 });
 
 gulp.task('watch', function() {
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(jsSources, ['js']);
-  // gulp.watch('components/sass/*.scss', ['compass']);
+  gulp.watch('components/sass/*.scss', ['compass']);
   gulp.watch('builds/development/*.html', ['html']);
   gulp.watch('builds/development/js/*.json', ['json']);
   gulp.watch('builds/development/images/**/*.*', ['images']);
