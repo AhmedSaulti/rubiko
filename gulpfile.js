@@ -10,7 +10,9 @@ var gulp = require('gulp'),
     jsonminify = require('gulp-jsonminify'),
     imagemin = require('gulp-imagemin'),
     pngcrush = require('imagemin-pngcrush'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps');
 
 var env,
     coffeeSources,
@@ -25,7 +27,7 @@ env = process.env.NODE_ENV || 'development';
 
 if (env == 'development') {
   outputDir = 'builds/development/';
-  // sassStyle = 'expanded';
+  sassStyle = 'expanded';
 } else {
   outputDir = 'builds/production/';
   sassStyle = 'compressed';
@@ -47,22 +49,18 @@ gulp.task('js', function() {
     .pipe(connect.reload())
 });
 
-gulp.task('compass', function () {
-  gulp.src(sassSources)
-    .pipe(compass({
-      sass: 'components/sass',
-      // image: outputDir + 'images',
-      // style: sassStyle
-    })
-      .on('error', gutil.log))
-    .pipe(gulp.dest('' + outputDir + 'css/css'))
-    .pipe(connect.reload())
+gulp.task('sass', function () {
+ return  gulp.src(sassSources)
+   .pipe(sourcemaps.init())
+   .pipe(sass().on('error', sass.logError))
+   .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest(outputDir + 'css'));
 });
 
 gulp.task('watch', function() {
   gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(jsSources, ['js']);
-  gulp.watch('components/sass/*.scss', ['compass']);
+  gulp.watch('components/sass/*.scss', ['sass']);
   gulp.watch('builds/development/*.html', ['html']);
   gulp.watch('builds/development/js/*.json', ['json']);
   gulp.watch('builds/development/images/**/*.*', ['images']);
@@ -100,4 +98,4 @@ gulp.task('json', function() {
     .pipe(connect.reload())
 });
 
-gulp.task('default', ['html', 'json', 'js', 'compass', 'images', 'connect', 'watch']);
+gulp.task('default', ['html', 'json', 'js', 'sass', 'images', 'connect', 'watch']);

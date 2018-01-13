@@ -60,6 +60,9 @@ typings/
 # Sass cache
 .sass-cache/
 
+#css map
+*.css.map
+
 # Gulp temp css
 /css
 /builds/css
