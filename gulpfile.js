@@ -54,11 +54,13 @@ gulp.task('sass', function () {
    .pipe(sourcemaps.init())
    .pipe(sass().on('error', sass.logError))
    .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest(outputDir + 'css'));
+    .pipe(gulp.dest(outputDir + 'css'))
+    .pipe(connect.reload());
+  
 });
 
 gulp.task('watch', function() {
-  gulp.watch(coffeeSources, ['coffee']);
+  // gulp.watch(coffeeSources, ['coffee']);
   gulp.watch(jsSources, ['js']);
   gulp.watch('components/sass/*.scss', ['sass']);
   gulp.watch('builds/development/*.html', ['html']);

@@ -12,6 +12,16 @@ $purple        : #3E2B3D;
 $darkPurple    : #3A3248;
 $pink          : #CC8E94;
 $skin          : #B08B7B;
- 
+$red            : #cd2929;
+$white : #fff;
+$main-color: $red;
+
 $headFont : 'Patua One', sans-serif;
 $bodyFont : 'Inika', serif;
+
+$navbar-default-bg : transparent;
+// Navbar links
+$navbar-default-link-color : #333;
+$navbar-default-link-hover-color : #000;
+$navbar-default-link-active-color : $main-color;
+$navbar-default-link-active-bg : $white*0.95;
