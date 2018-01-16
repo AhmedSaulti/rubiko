@@ -100,4 +100,11 @@ section {
     &:nth-child(7n+5) {
         margin-left: 12%;
     }
+    &:nth-child(7n+7) {
+        margin-right: 12%;
+    }
+}
+
+#features {
+    text-align: center;
 }
