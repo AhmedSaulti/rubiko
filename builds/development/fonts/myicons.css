@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "myicons";
+  src:url("fonts/myicons/myicons.eot");
+  src:url("fonts/myicons/myicons.eot?#iefix") format("embedded-opentype"),
+    url("fonts/myicons/myicons.woff") format("woff"),
+    url("fonts/myicons/myicons.ttf") format("truetype"),
+    url("fonts/myicons/myicons.svg#myicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "myicons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "myicons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plus:before {
+  content: "\61";
+}
+.icon-pinterest:before {
+  content: "\62";
+}
+.icon-rubika-logo:before {
+  content: "\64";
+}
+.icon-left-chevron:before {
+  content: "\67";
+}
+.icon-layers:before {
+  content: "\68";
+}
+.icon-comment:before {
+  content: "\69";
+}
+.icon-speed:before {
+  content: "\6a";
+}
+.icon-down-chevron:before {
+  content: "\6b";
+}
+.icon-video:before {
+  content: "\6e";
+}
+.icon-vector-design:before {
+  content: "\6f";
+}
+.icon-up-chevron:before {
+  content: "\70";
+}
+.icon-tumbler:before {
+  content: "\73";
+}
+.icon-twitter-outline:before {
+  content: "\74";
+}
+.icon-google-plus:before {
+  content: "\75";
+}
+.icon-dribble:before {
+  content: "\76";
+}
+.icon-linkedin:before {
+  content: "\77";
+}
+.icon-twitter-1:before {
+  content: "\78";
+}
+.icon-facebook:before {
+  content: "\79";
+}
+.icon-right-chevron:before {
+  content: "\7a";
+}
+.icon-graph:before {
+  content: "\63";
+}
+.icon-picture:before {
+  content: "\6c";
+}
+.icon-pen:before {
+  content: "\65";
+}
+.icon-levels:before {
+  content: "\6d";
+}
+.icon-date:before {
+  content: "\66";
+}
+.icon-team:before {
+  content: "\71";
+}
+.icon-trophy:before {
+  content: "\41";
+}
+.icon-facebook-1:before {
+  content: "\42";
+}
+.icon-responsive:before {
+  content: "\43";
+}
+.icon-mobile:before {
+  content: "\72";
+}
+.icon-square-view:before {
+  content: "\44";
+}
+.icon-rhombus-view:before {
+  content: "\45";
+}

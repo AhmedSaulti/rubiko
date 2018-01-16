@@ -7,8 +7,10 @@
 // // @import "compass/css3/box-shadow";
  
 //Core partials
-@import "custom-variables";
-@import "mixins";
-@import "bootstrap";
-@import "base";
+@import "partials/custom-variables";
+@import "partials/mixins";
+@import "vendor/bootstrap";
+@import "vendor/myicons";
+@import "partials/base";
+@import "partials/layouts";
 @import "modules";
